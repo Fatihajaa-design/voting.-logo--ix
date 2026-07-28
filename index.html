@@ -3,516 +3,654 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#07111f" />
-  <meta name="description" content="Program glow up 30 hari untuk remaja: skincare, workout, pola makan, tidur, dan checklist harian." />
-  <title>Glow Up Makin Ganteng 30 Hari</title>
+  <meta name="theme-color" content="#071c35" />
+  <meta name="description" content="Voting konsep logo kelas XI.I — pilih desain favoritmu." />
+  <title>Vote Konsep Logo XI.I</title>
   <style>
-    :root{
-      --bg:#060a12;
-      --bg-soft:#0a1220;
-      --card:rgba(17,27,45,.78);
-      --card-strong:#111b2d;
-      --text:#f8fafc;
-      --muted:#9fb0c8;
-      --line:rgba(255,255,255,.10);
-      --cyan:#43d9ff;
-      --blue:#4f7cff;
-      --violet:#a76cff;
-      --green:#4ade80;
-      --amber:#fbbf24;
-      --red:#fb7185;
-      --shadow:0 28px 80px rgba(0,0,0,.40);
-      --radius:26px;
+    :root {
+      --navy-950: #03101f;
+      --navy-900: #071c35;
+      --navy-800: #0a2b4c;
+      --ocean-700: #075d7d;
+      --ocean-500: #13a7cb;
+      --cyan-300: #84e8f7;
+      --white: #f7fcff;
+      --muted: #a8bfd2;
+      --pink-600: #c9437f;
+      --pink-400: #f17bb0;
+      --pink-200: #ffc6df;
+      --green: #4fd6a5;
+      --danger: #ff6d7a;
+      --card: rgba(8, 34, 61, 0.78);
+      --line: rgba(151, 220, 244, 0.18);
+      --shadow: 0 20px 65px rgba(0, 0, 0, 0.28);
+      --radius: 26px;
     }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      color:var(--text);
-      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--white);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at 12% 0%, rgba(79,124,255,.22), transparent 28%),
-        radial-gradient(circle at 88% 8%, rgba(167,108,255,.18), transparent 26%),
-        radial-gradient(circle at 50% 90%, rgba(67,217,255,.10), transparent 30%),
-        var(--bg);
-      min-height:100vh;
+        radial-gradient(circle at 10% 0%, rgba(19, 167, 203, .20), transparent 30%),
+        radial-gradient(circle at 92% 18%, rgba(241, 123, 176, .11), transparent 28%),
+        linear-gradient(145deg, var(--navy-950), #06182c 48%, #071f39 100%);
+      overflow-x: hidden;
     }
-    body::before{
-      content:"";position:fixed;inset:0;pointer-events:none;opacity:.17;
-      background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
-      background-size:32px 32px;
-      mask-image:linear-gradient(to bottom,#000,transparent 85%);
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .45;
+      background-image:
+        radial-gradient(circle at 18% 25%, rgba(255,255,255,.8) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 72% 14%, rgba(255,255,255,.7) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 88% 72%, rgba(255,255,255,.55) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 30% 85%, rgba(255,255,255,.45) 0 1px, transparent 1.5px);
+      background-size: 190px 190px, 260px 260px, 310px 310px, 230px 230px;
     }
-    a{color:inherit}
-    button,input{font:inherit}
-    .container{width:min(1180px,calc(100% - 28px));margin:auto}
-    .nav{
-      position:sticky;top:0;z-index:30;
-      background:rgba(6,10,18,.72);backdrop-filter:blur(18px);
-      border-bottom:1px solid var(--line)
+
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+
+    .wrap { width: min(1160px, calc(100% - 32px)); margin: 0 auto; position: relative; z-index: 1; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      background: rgba(3, 16, 31, .76);
+      backdrop-filter: blur(18px);
     }
-    .nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:-.02em}
-    .brand-mark{width:40px;height:40px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--cyan),var(--blue),var(--violet));box-shadow:0 10px 30px rgba(79,124,255,.35)}
-    .nav-actions{display:flex;align-items:center;gap:9px}
-    .btn{
-      border:1px solid var(--line);border-radius:14px;padding:11px 15px;color:var(--text);
-      background:rgba(255,255,255,.055);cursor:pointer;transition:.2s ease;font-weight:750
+
+    .topbar-inner {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
     }
-    .btn:hover{transform:translateY(-1px);border-color:rgba(67,217,255,.35);background:rgba(67,217,255,.09)}
-    .btn.primary{background:linear-gradient(135deg,var(--blue),var(--violet));border:0;box-shadow:0 12px 28px rgba(79,124,255,.30)}
-    .hero{padding:72px 0 38px}
-    .hero-grid{display:grid;grid-template-columns:1.18fr .82fr;gap:24px;align-items:stretch}
-    .hero-copy,.progress-card,.panel,.day-card{border:1px solid var(--line);background:linear-gradient(160deg,rgba(18,29,49,.90),rgba(10,18,32,.74));box-shadow:var(--shadow);backdrop-filter:blur(18px)}
-    .hero-copy{padding:42px;border-radius:34px;position:relative;overflow:hidden}
-    .hero-copy::after{content:"30";position:absolute;right:-10px;bottom:-55px;font-size:260px;font-weight:1000;color:rgba(255,255,255,.035);line-height:1}
-    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid rgba(67,217,255,.22);border-radius:999px;background:rgba(67,217,255,.08);color:#bff3ff;font-size:13px;font-weight:850;text-transform:uppercase;letter-spacing:.08em}
-    h1{font-size:clamp(42px,7vw,82px);line-height:.95;letter-spacing:-.065em;margin:20px 0 18px;max-width:850px}
-    .gradient-text{background:linear-gradient(90deg,#fff 10%,var(--cyan) 45%,#b99aff 85%);-webkit-background-clip:text;background-clip:text;color:transparent}
-    .lead{font-size:18px;line-height:1.75;color:#c3d0e2;max-width:760px;margin:0}
-    .hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
-    .badge{padding:10px 13px;border-radius:999px;background:rgba(255,255,255,.055);border:1px solid var(--line);font-size:13px;color:#d8e2f0;font-weight:750}
-    .progress-card{border-radius:34px;padding:28px;display:flex;flex-direction:column;justify-content:space-between;min-height:390px}
-    .ring-wrap{display:grid;place-items:center;padding:14px}
-    .ring{--p:0;position:relative;width:190px;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--cyan) calc(var(--p)*1%),rgba(255,255,255,.08) 0);box-shadow:0 0 45px rgba(67,217,255,.16)}
-    .ring::before{content:"";position:absolute;inset:15px;border-radius:inherit;background:#0b1423;border:1px solid var(--line)}
-    .ring-number{position:relative;text-align:center}.ring-number strong{font-size:46px;letter-spacing:-.05em}.ring-number span{display:block;color:var(--muted);font-size:13px;margin-top:-4px}
-    .progress-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
-    .mini-stat{border:1px solid var(--line);background:rgba(255,255,255,.04);padding:14px;border-radius:17px;text-align:center}.mini-stat strong{display:block;font-size:21px}.mini-stat span{color:var(--muted);font-size:12px}
-    .section{padding:24px 0}
-    .section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:17px}
-    .section-head h2{margin:0;font-size:clamp(28px,4vw,46px);letter-spacing:-.045em}
-    .section-head p{color:var(--muted);max-width:650px;line-height:1.65;margin:6px 0 0}
-    .panel{border-radius:var(--radius);padding:24px}
-    .warning{display:grid;grid-template-columns:auto 1fr;gap:14px;padding:18px;border:1px solid rgba(251,191,36,.25);background:rgba(251,191,36,.075);border-radius:20px;color:#fff2c1;line-height:1.55}
-    .warning b{display:block;margin-bottom:3px;color:#fff}
-    .icon-box{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:rgba(251,191,36,.16);font-size:21px}
-    .routine-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
-    .routine-card{padding:18px;border:1px solid var(--line);background:rgba(255,255,255,.035);border-radius:20px}
-    .routine-card h3{margin:12px 0 8px;font-size:18px}.routine-card p{margin:0;color:var(--muted);line-height:1.55;font-size:14px}
-    .routine-number{width:42px;height:42px;display:grid;place-items:center;border-radius:14px;background:linear-gradient(135deg,rgba(67,217,255,.18),rgba(79,124,255,.18));border:1px solid rgba(67,217,255,.23);font-weight:900;color:#c8f6ff}
-    .controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:16px 0 18px}
-    .filter{border:1px solid var(--line);background:rgba(255,255,255,.035);color:var(--muted);padding:10px 14px;border-radius:999px;cursor:pointer;font-weight:750}
-    .filter.active{color:#04131a;background:linear-gradient(135deg,var(--cyan),#7ae7ff);border-color:transparent}
-    .search{flex:1;min-width:210px;border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--text);padding:12px 14px;border-radius:14px;outline:none}
-    .search:focus{border-color:rgba(67,217,255,.45);box-shadow:0 0 0 4px rgba(67,217,255,.08)}
-    .days-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-    .day-card{border-radius:24px;overflow:hidden;transition:.22s ease}
-    .day-card:hover{transform:translateY(-2px);border-color:rgba(67,217,255,.23)}
-    .day-card.completed{border-color:rgba(74,222,128,.34);box-shadow:0 22px 60px rgba(74,222,128,.08)}
-    .day-head{display:flex;gap:14px;align-items:flex-start;padding:20px 20px 15px;cursor:pointer;position:relative}
-    .day-index{flex:0 0 auto;width:54px;height:54px;border-radius:18px;display:grid;place-items:center;background:linear-gradient(145deg,rgba(79,124,255,.22),rgba(167,108,255,.17));border:1px solid rgba(111,145,255,.25);font-size:22px;font-weight:950}
-    .day-title{flex:1}.day-title h3{margin:2px 0 5px;font-size:19px}.day-title p{margin:0;color:var(--muted);font-size:13px;line-height:1.5}
-    .day-score{min-width:52px;text-align:right;color:#b8c5d7;font-size:12px;font-weight:800}.day-score strong{display:block;color:var(--cyan);font-size:17px}
-    .day-body{display:none;padding:0 20px 20px}.day-card.open .day-body{display:block}.day-card.open .chev{transform:rotate(180deg)}
-    .chev{position:absolute;right:20px;bottom:2px;color:var(--muted);transition:.2s}
-    .task-group{margin-top:14px}.task-group-title{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:#8ea1bb;font-weight:900;margin:0 0 9px}
-    .task{display:grid;grid-template-columns:auto 1fr;gap:11px;align-items:flex-start;padding:11px 12px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.025);border-radius:14px;margin-bottom:8px;cursor:pointer;transition:.15s}
-    .task:hover{background:rgba(255,255,255,.05)}
-    .task input{appearance:none;width:20px;height:20px;border:1px solid rgba(255,255,255,.24);border-radius:7px;background:#0a1321;display:grid;place-items:center;margin:1px 0 0;cursor:pointer}
-    .task input:checked{background:linear-gradient(135deg,var(--cyan),var(--blue));border-color:transparent}.task input:checked::after{content:"✓";font-size:14px;font-weight:950;color:#041018}
-    .task input:checked + span{text-decoration:line-through;color:#708099}
-    .task span{line-height:1.45;font-size:14px;color:#dce5f2}
-    .phase{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:6px 9px;font-size:11px;font-weight:850;margin-top:9px;border:1px solid var(--line);color:#d8e4f3;background:rgba(255,255,255,.04)}
-    .food-grid,.training-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    .list-card{border:1px solid var(--line);border-radius:22px;padding:22px;background:rgba(255,255,255,.035)}
-    .list-card h3{margin:0 0 14px}.clean-list{padding:0;margin:0;list-style:none}.clean-list li{display:grid;grid-template-columns:auto 1fr;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.07);color:#cbd6e5;line-height:1.5}.clean-list li:last-child{border-bottom:0}.dot{width:25px;height:25px;border-radius:9px;display:grid;place-items:center;font-size:13px;background:rgba(74,222,128,.12);color:#8ff0ad}.dot.no{background:rgba(251,113,133,.12);color:#ff9aab}
-    .meal-plan{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin-top:16px}.meal{padding:15px;border-radius:17px;border:1px solid var(--line);background:rgba(255,255,255,.03)}.meal b{display:block;margin-bottom:6px}.meal span{color:var(--muted);font-size:13px;line-height:1.5}
-    .settings-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.field label{display:block;color:#aebcd0;font-size:12px;font-weight:800;margin-bottom:7px}.field input{width:100%;background:#0a1321;border:1px solid var(--line);border-radius:13px;padding:12px;color:var(--text);outline:none}.field input:focus{border-color:rgba(67,217,255,.45)}
-    .modal{position:fixed;inset:0;display:none;place-items:center;padding:20px;background:rgba(0,0,0,.70);backdrop-filter:blur(12px);z-index:70}.modal.open{display:grid}.modal-card{width:min(720px,100%);max-height:90vh;overflow:auto;background:#0b1423;border:1px solid var(--line);box-shadow:var(--shadow);border-radius:28px;padding:25px}.modal-top{display:flex;justify-content:space-between;align-items:center;gap:10px}.close{width:40px;height:40px;border-radius:13px;background:rgba(255,255,255,.05);border:1px solid var(--line);color:#fff;cursor:pointer}
-    .source{color:#91a1b7;font-size:12px;line-height:1.65}.source a{color:#bcd3ff}.footer{padding:40px 0 60px;color:#8495ad;text-align:center;font-size:13px}
-    .toast{position:fixed;right:20px;bottom:20px;z-index:80;padding:13px 16px;border-radius:14px;color:#041018;background:linear-gradient(135deg,var(--cyan),#a3f2ff);font-weight:850;box-shadow:0 18px 40px rgba(0,0,0,.35);transform:translateY(120px);opacity:0;transition:.25s}.toast.show{transform:translateY(0);opacity:1}
-    .print-only{display:none}
-    @media(max-width:900px){.hero-grid,.food-grid,.training-grid{grid-template-columns:1fr}.routine-grid{grid-template-columns:1fr 1fr}.meal-plan{grid-template-columns:1fr 1fr}.days-grid{grid-template-columns:1fr}.hero{padding-top:42px}.hero-copy{padding:30px}.progress-card{min-height:auto}.nav .brand span{display:none}}
-    @media(max-width:560px){.container{width:min(100% - 18px,1180px)}.nav-inner{height:64px}.btn{padding:10px 12px}.hero-copy,.progress-card,.panel{border-radius:23px}.hero-copy{padding:24px}.lead{font-size:15px}.routine-grid,.settings-grid,.meal-plan{grid-template-columns:1fr}.section{padding:18px 0}.section-head{align-items:flex-start;flex-direction:column}.day-head{padding:16px}.day-body{padding:0 16px 16px}.day-index{width:48px;height:48px}.hide-mobile{display:none}}
-    @media print{
-      body{background:#fff;color:#111}.nav,.controls,.modal,.toast,.btn{display:none!important}.container{width:100%}.hero,.section{padding:10px 0}.hero-copy,.progress-card,.panel,.day-card{background:#fff;color:#111;box-shadow:none;border:1px solid #ddd;break-inside:avoid}.lead,.section-head p,.routine-card p,.day-title p,.task span,.clean-list li,.source{color:#444}.days-grid{grid-template-columns:1fr}.day-body{display:block!important}.task{background:#fff}.day-card{page-break-inside:avoid}.print-only{display:block}
+
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 850; letter-spacing: .03em; }
+    .brand-mark {
+      width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center;
+      border: 1px solid rgba(132,232,247,.45);
+      background: linear-gradient(145deg, #0a365c, #071c35);
+      box-shadow: inset 0 0 0 5px rgba(132,232,247,.05), 0 8px 25px rgba(0,0,0,.2);
+    }
+    .brand-mark svg { width: 25px; height: 25px; }
+    .brand small { display: block; font-size: .69rem; color: var(--muted); font-weight: 650; letter-spacing: .12em; }
+
+    .top-actions { display: flex; gap: 10px; align-items: center; }
+    .tiny-btn {
+      border: 1px solid var(--line);
+      color: var(--white);
+      background: rgba(255,255,255,.04);
+      border-radius: 999px;
+      padding: 9px 13px;
+      font-size: .83rem;
+      font-weight: 760;
+    }
+    .tiny-btn:hover { background: rgba(255,255,255,.09); }
+
+    .hero { padding: 76px 0 42px; text-align: center; }
+    .eyebrow {
+      display: inline-flex; gap: 8px; align-items: center;
+      padding: 8px 13px; border-radius: 999px;
+      color: var(--cyan-300); font-weight: 800; font-size: .78rem; letter-spacing: .12em;
+      border: 1px solid rgba(132,232,247,.2); background: rgba(10,43,76,.56);
+    }
+    .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 6px rgba(79,214,165,.11); }
+
+    h1 {
+      margin: 24px auto 16px;
+      max-width: 880px;
+      font-size: clamp(2.25rem, 7vw, 5.2rem);
+      line-height: .98;
+      letter-spacing: -.055em;
+    }
+    .gradient-text {
+      background: linear-gradient(100deg, #fff 10%, var(--cyan-300) 50%, #fff 88%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .lead { max-width: 720px; margin: 0 auto; color: var(--muted); font-size: clamp(1rem, 2vw, 1.18rem); line-height: 1.75; }
+
+    .status-banner {
+      margin: 28px auto 0;
+      max-width: 780px;
+      display: none;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 16px;
+      text-align: left;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 195, 105, .3);
+      background: rgba(94, 62, 14, .38);
+      color: #ffe7b2;
+      font-size: .9rem;
+      line-height: 1.55;
+    }
+    .status-banner.show { display: flex; }
+
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 20px; margin: 26px 0 20px; }
+    .section-head h2 { margin: 0; font-size: clamp(1.55rem, 3vw, 2.3rem); letter-spacing: -.03em; }
+    .section-head p { margin: 6px 0 0; color: var(--muted); }
+    .vote-state { color: var(--cyan-300); font-weight: 750; font-size: .9rem; text-align: right; }
+
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+    }
+    .card:hover { transform: translateY(-6px); border-color: rgba(132,232,247,.42); box-shadow: 0 26px 75px rgba(0,0,0,.35); }
+    .card.selected { outline: 2px solid var(--cyan-300); outline-offset: 3px; }
+    .art {
+      aspect-ratio: 1 / 1;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background:
+        radial-gradient(circle at 50% 42%, rgba(132,232,247,.17), transparent 37%),
+        linear-gradient(180deg, rgba(255,255,255,.035), transparent);
+    }
+    .art.pink { background: radial-gradient(circle at 50% 42%, rgba(255,198,223,.22), transparent 37%), linear-gradient(180deg, rgba(255,255,255,.04), transparent); }
+    .logo-svg { width: min(100%, 270px); filter: drop-shadow(0 18px 24px rgba(0,0,0,.3)); }
+
+    .card-body { padding: 22px; border-top: 1px solid var(--line); }
+    .concept-no { color: var(--cyan-300); font-size: .72rem; font-weight: 850; letter-spacing: .16em; }
+    .pink-label { color: var(--pink-200); }
+    .card h3 { font-size: 1.45rem; margin: 8px 0 8px; letter-spacing: -.025em; }
+    .card p { color: var(--muted); line-height: 1.62; min-height: 78px; margin: 0 0 18px; font-size: .93rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+    .tag { padding: 6px 9px; border: 1px solid var(--line); background: rgba(255,255,255,.04); border-radius: 999px; color: #d9edf7; font-size: .72rem; font-weight: 730; }
+
+    .vote-btn {
+      width: 100%;
+      border: 0;
+      border-radius: 14px;
+      padding: 13px 16px;
+      color: #03101f;
+      background: linear-gradient(100deg, var(--cyan-300), #49c9e5);
+      font-weight: 900;
+      transition: transform .15s ease, filter .15s ease;
+    }
+    .vote-btn:hover { filter: brightness(1.07); transform: translateY(-1px); }
+    .vote-btn.pink { background: linear-gradient(100deg, var(--pink-200), var(--pink-400)); color: #351023; }
+    .vote-btn:disabled { cursor: not-allowed; opacity: .5; transform: none; }
+
+    .results {
+      margin: 68px 0 36px;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      background: rgba(6, 29, 53, .78);
+      box-shadow: var(--shadow);
+      padding: clamp(22px, 4vw, 38px);
+    }
+    .results[hidden] { display: none; }
+    .result-summary { display: flex; justify-content: space-between; gap: 20px; align-items: center; margin-bottom: 28px; }
+    .total-block strong { display: block; font-size: clamp(2rem, 5vw, 3.6rem); line-height: 1; }
+    .total-block span { color: var(--muted); font-size: .88rem; }
+    .results-note { color: var(--muted); max-width: 520px; line-height: 1.55; text-align: right; font-size: .88rem; }
+
+    .result-row { margin: 20px 0; }
+    .result-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 9px; }
+    .result-name { font-weight: 820; }
+    .result-count { color: var(--cyan-300); font-weight: 860; white-space: nowrap; }
+    .bar { height: 13px; background: rgba(255,255,255,.065); border-radius: 999px; overflow: hidden; border: 1px solid rgba(255,255,255,.05); }
+    .bar > span { display: block; width: 0; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #1ba5c9, var(--cyan-300)); transition: width .8s cubic-bezier(.2,.8,.2,1); }
+    .result-row.pink .bar > span { background: linear-gradient(90deg, var(--pink-600), var(--pink-200)); }
+
+    .result-actions { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 10px; }
+    .secondary-btn {
+      border: 1px solid var(--line); color: var(--white); background: rgba(255,255,255,.045);
+      padding: 10px 14px; border-radius: 12px; font-weight: 780;
+    }
+    .secondary-btn:hover { background: rgba(255,255,255,.09); }
+
+    .how { margin: 34px 0 80px; display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+    .how-item { border: 1px solid var(--line); border-radius: 18px; padding: 18px; background: rgba(255,255,255,.025); }
+    .how-item b { display: block; margin-bottom: 7px; }
+    .how-item span { color: var(--muted); line-height: 1.55; font-size: .88rem; }
+    .how-no { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 10px; background: rgba(132,232,247,.11); color: var(--cyan-300); font-weight: 900; margin-bottom: 13px; }
+
+    footer { padding: 24px 0 36px; color: var(--muted); text-align: center; font-size: .82rem; border-top: 1px solid rgba(255,255,255,.06); }
+
+    dialog {
+      width: min(460px, calc(100% - 28px));
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 0;
+      color: var(--white);
+      background: #071c35;
+      box-shadow: 0 25px 90px rgba(0,0,0,.6);
+    }
+    dialog::backdrop { background: rgba(0,0,0,.72); backdrop-filter: blur(5px); }
+    .dialog-body { padding: 26px; }
+    .dialog-body h3 { margin: 0 0 10px; font-size: 1.45rem; }
+    .dialog-body p { color: var(--muted); line-height: 1.6; }
+    .dialog-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 22px; }
+    .confirm-btn { border: 0; border-radius: 12px; padding: 10px 16px; background: var(--cyan-300); color: #03101f; font-weight: 900; }
+
+    .toast {
+      position: fixed; left: 50%; bottom: 24px; z-index: 100;
+      transform: translate(-50%, 30px); opacity: 0;
+      pointer-events: none;
+      max-width: calc(100% - 32px);
+      padding: 12px 16px; border-radius: 14px;
+      background: #f7fcff; color: #06182c; font-weight: 800; font-size: .9rem;
+      box-shadow: 0 18px 60px rgba(0,0,0,.35);
+      transition: .25s ease;
+    }
+    .toast.show { opacity: 1; transform: translate(-50%, 0); }
+    .toast.error { background: #ffd9de; color: #5f1520; }
+
+    @media (max-width: 900px) {
+      .cards { grid-template-columns: 1fr; max-width: 620px; margin: 0 auto; }
+      .card p { min-height: auto; }
+      .how { grid-template-columns: 1fr; }
+      .result-summary { align-items: flex-start; flex-direction: column; }
+      .results-note { text-align: left; }
+    }
+    @media (max-width: 560px) {
+      .wrap { width: min(100% - 20px, 1160px); }
+      .topbar-inner { min-height: 62px; }
+      .brand-text { font-size: .86rem; }
+      .brand small { font-size: .59rem; }
+      .hero { padding-top: 54px; }
+      .top-actions .tiny-btn:first-child { display: none; }
+      .section-head { align-items: flex-start; flex-direction: column; }
+      .vote-state { text-align: left; }
+      .art { padding: 20px; }
     }
   </style>
 </head>
 <body>
-  <nav class="nav">
-    <div class="container nav-inner">
-      <div class="brand"><div class="brand-mark">✦</div><span>GLOW/30</span></div>
-      <div class="nav-actions">
-        <button class="btn hide-mobile" id="printBtn">Cetak / PDF</button>
-        <button class="btn" id="settingsBtn">Atur Produk</button>
-        <button class="btn primary" id="todayBtn">Hari Ini</button>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="#84e8f7" stroke-width="1.5"/><path d="M3.6 12h16.8M12 3.6c2.2 2.1 3.3 4.9 3.3 8.4S14.2 18.3 12 20.4M12 3.6C9.8 5.7 8.7 8.5 8.7 12s1.1 6.3 3.3 8.4" stroke="#f7fcff" stroke-width="1.2"/></svg>
+        </span>
+        <div class="brand-text">XI.I LOGO VOTE<small>2026—2027</small></div>
+      </div>
+      <div class="top-actions">
+        <button class="tiny-btn" id="showResultsBtn" type="button">Lihat hasil</button>
+        <button class="tiny-btn" id="shareBtn" type="button">Bagikan</button>
       </div>
     </div>
-  </nav>
+  </header>
 
-  <main>
+  <main class="wrap">
     <section class="hero">
-      <div class="container hero-grid">
-        <article class="hero-copy">
-          <span class="eyebrow">✦ 30-Day Healthy Upgrade</span>
-          <h1><span class="gradient-text">Glow Up Makin Ganteng</span><br>30 Hari</h1>
-          <p class="lead">Program harian yang menggabungkan skincare 6-in-1, latihan tubuh, pola makan seimbang, kebersihan, dan tidur. Fokusnya bukan berubah instan, tetapi tampil lebih bersih, segar, bugar, dan percaya diri.</p>
-          <div class="hero-badges">
-            <span class="badge">✓ Checklist tersimpan otomatis</span>
-            <span class="badge">✓ Ramah pemula usia 17 tahun</span>
-            <span class="badge">✓ Workout tanpa alat</span>
-            <span class="badge">✓ Bisa dicetak ke PDF</span>
+      <span class="eyebrow"><i class="pulse"></i> VOTING LOGO KELAS XI.I</span>
+      <h1>Pilih identitas yang paling <span class="gradient-text">mewakili kita.</span></h1>
+      <p class="lead">Lihat ketiga konsep, pilih satu yang paling kuat, lalu kirim suaramu. Setiap perangkat hanya mendapat satu kesempatan memilih.</p>
+      <div class="status-banner" id="statusBanner" role="status">
+        <span>⚠️</span>
+        <div><strong>Mode demo lokal aktif.</strong><br>Suara hanya tersimpan di perangkat ini. Isi konfigurasi Firebase di bagian JavaScript agar seluruh suara dari GitHub Pages tersimpan bersama.</div>
+      </div>
+    </section>
+
+    <section aria-labelledby="conceptTitle">
+      <div class="section-head">
+        <div>
+          <h2 id="conceptTitle">Tiga konsep logo</h2>
+          <p>Klik tombol pada konsep pilihanmu.</p>
+        </div>
+        <div class="vote-state" id="voteState">Menyiapkan sistem voting…</div>
+      </div>
+
+      <div class="cards">
+        <article class="card" data-id="ghost-ranger">
+          <div class="art">
+            <svg class="logo-svg" viewBox="0 0 300 300" role="img" aria-label="Konsep logo Ghost Ranger">
+              <defs>
+                <radialGradient id="g1" cx="50%" cy="40%"><stop offset="0" stop-color="#14789b"/><stop offset="1" stop-color="#06182c"/></radialGradient>
+                <linearGradient id="g1b" x1="0" x2="1"><stop stop-color="#6ce6f5"/><stop offset="1" stop-color="#2386aa"/></linearGradient>
+              </defs>
+              <circle cx="150" cy="150" r="139" fill="#041426" stroke="#5c98cf" stroke-width="6"/>
+              <circle cx="150" cy="150" r="125" fill="url(#g1)" stroke="#84e8f7" stroke-width="2"/>
+              <circle cx="150" cy="150" r="103" fill="#071c35" stroke="#5c98cf" stroke-width="4"/>
+              <path d="M150 49v202M49 150h202M79 79l142 142M221 79L79 221" stroke="#94d9ed" stroke-width="1" opacity=".55"/>
+              <circle cx="150" cy="150" r="72" fill="none" stroke="#94d9ed" stroke-width="1" opacity=".55"/>
+              <circle cx="150" cy="150" r="42" fill="none" stroke="#94d9ed" stroke-width="1" opacity=".55"/>
+              <path d="M105 122c22-27 68-27 90 0l-12 55c-20 20-46 20-66 0z" fill="#0d3555" stroke="#f7fcff" stroke-width="4"/>
+              <path d="M117 137c12-12 21-13 28-10-2 14-8 24-20 29-7-5-10-11-8-19zM183 137c-12-12-21-13-28-10 2 14 8 24 20 29 7-5 10-11 8-19z" fill="#f7fcff" stroke="#68d8ee" stroke-width="2"/>
+              <path d="M150 108v80M118 118l64 64M182 118l-64 64" stroke="#d9f7ff" stroke-width="1.4" opacity=".45"/>
+              <path d="M61 95a109 109 0 0 1 178 0M61 205a109 109 0 0 0 178 0" fill="none" stroke="url(#g1b)" stroke-width="4"/>
+              <text x="150" y="38" text-anchor="middle" fill="#f7fcff" font-size="17" font-weight="900" letter-spacing="2">XI.I</text>
+              <text x="150" y="235" text-anchor="middle" fill="#f7fcff" font-size="24" font-weight="900" letter-spacing="2">GHOST</text>
+              <text x="150" y="259" text-anchor="middle" fill="#84e8f7" font-size="15" font-weight="800" letter-spacing="4">RANGER</text>
+            </svg>
+          </div>
+          <div class="card-body">
+            <span class="concept-no">KONSEP 01</span>
+            <h3>Ghost Ranger</h3>
+            <p>Biru laut gelap dengan identitas misterius, detail jaring, dan aksen mata penjaga bergaya pahlawan laba-laba yang dibuat orisinal.</p>
+            <div class="tags"><span class="tag">Biru laut</span><span class="tag">Jaring laba-laba</span><span class="tag">Heroic</span></div>
+            <button class="vote-btn" type="button" data-vote="ghost-ranger">Vote Ghost Ranger</button>
           </div>
         </article>
-        <aside class="progress-card">
-          <div>
-            <div style="display:flex;justify-content:space-between;gap:12px;align-items:center"><div><b>Progress keseluruhan</b><div style="color:var(--muted);font-size:13px;margin-top:4px">Checklist tersimpan di perangkat ini</div></div><span class="phase" id="currentPhase">Mulai Hari 1</span></div>
-            <div class="ring-wrap"><div class="ring" id="progressRing"><div class="ring-number"><strong id="progressPercent">0%</strong><span>selesai</span></div></div></div>
+
+        <article class="card" data-id="stemverse-xi">
+          <div class="art">
+            <svg class="logo-svg" viewBox="0 0 300 300" role="img" aria-label="Konsep logo Stemverse XI">
+              <defs><radialGradient id="g2"><stop stop-color="#146c91"/><stop offset="1" stop-color="#05172a"/></radialGradient></defs>
+              <circle cx="150" cy="150" r="139" fill="#041426" stroke="#5c98cf" stroke-width="6"/>
+              <circle cx="150" cy="150" r="125" fill="url(#g2)" stroke="#84e8f7" stroke-width="2"/>
+              <circle cx="150" cy="150" r="98" fill="#071c35" stroke="#5c98cf" stroke-width="4"/>
+              <ellipse cx="150" cy="145" rx="72" ry="28" fill="none" stroke="#84e8f7" stroke-width="3" transform="rotate(25 150 145)"/>
+              <ellipse cx="150" cy="145" rx="72" ry="28" fill="none" stroke="#f7fcff" stroke-width="2" transform="rotate(-25 150 145)"/>
+              <circle cx="150" cy="145" r="12" fill="#84e8f7"/>
+              <circle cx="94" cy="111" r="7" fill="#f7fcff"/><circle cx="207" cy="112" r="7" fill="#f7fcff"/>
+              <path d="M117 178h66l-8 36h-50z" fill="#0d3555" stroke="#f7fcff" stroke-width="3"/>
+              <path d="M127 178l14-36M173 178l-14-36" stroke="#f7fcff" stroke-width="3"/>
+              <path d="M132 195h36" stroke="#84e8f7" stroke-width="5" stroke-linecap="round"/>
+              <path d="M62 96l17-9M74 77l10 17M218 88l18 10M225 78l-9 19" stroke="#84e8f7" stroke-width="3" stroke-linecap="round"/>
+              <text x="93" y="170" fill="#f7fcff" font-size="20" font-weight="900">π</text>
+              <text x="198" y="174" fill="#f7fcff" font-size="17" font-weight="900">DNA</text>
+              <text x="150" y="38" text-anchor="middle" fill="#f7fcff" font-size="17" font-weight="900" letter-spacing="2">XI.I</text>
+              <text x="150" y="244" text-anchor="middle" fill="#f7fcff" font-size="22" font-weight="900" letter-spacing="1.5">STEMVERSE</text>
+              <text x="150" y="264" text-anchor="middle" fill="#84e8f7" font-size="13" font-weight="800" letter-spacing="5">XI</text>
+            </svg>
           </div>
-          <div class="progress-meta">
-            <div class="mini-stat"><strong id="doneTasks">0</strong><span>tugas selesai</span></div>
-            <div class="mini-stat"><strong id="doneDays">0</strong><span>hari tuntas</span></div>
-            <div class="mini-stat"><strong id="streak">0</strong><span>streak hari</span></div>
+          <div class="card-body">
+            <span class="concept-no">KONSEP 02</span>
+            <h3>STEMVERSE XI</h3>
+            <p>Identitas akademik futuristis dengan perpaduan simbol matematika, atom kimia, lab, serta DNA sebagai representasi biologi.</p>
+            <div class="tags"><span class="tag">Matematika</span><span class="tag">Kimia</span><span class="tag">Biologi</span></div>
+            <button class="vote-btn" type="button" data-vote="stemverse-xi">Vote STEMVERSE XI</button>
           </div>
-        </aside>
+        </article>
+
+        <article class="card" data-id="pink-tide">
+          <div class="art pink">
+            <svg class="logo-svg" viewBox="0 0 300 300" role="img" aria-label="Konsep logo Pink Tide">
+              <defs><radialGradient id="g3"><stop stop-color="#f790bd"/><stop offset="1" stop-color="#7c2450"/></radialGradient></defs>
+              <circle cx="150" cy="150" r="139" fill="#3f1028" stroke="#ffb6d6" stroke-width="6"/>
+              <circle cx="150" cy="150" r="125" fill="url(#g3)" stroke="#ffd8e9" stroke-width="2"/>
+              <circle cx="150" cy="150" r="98" fill="#5a1838" stroke="#ffb6d6" stroke-width="4"/>
+              <circle cx="150" cy="135" r="48" fill="#f9acd0" opacity=".25"/>
+              <path d="M67 162c23-22 44-22 67 0s44 22 67 0 40-21 50-8v48H54v-31c4 0 8-3 13-9z" fill="#ffb6d6" opacity=".95"/>
+              <path d="M54 187c26-18 50-18 76 0s50 18 76 0 37-14 45-8" fill="none" stroke="#7c2450" stroke-width="8" stroke-linecap="round"/>
+              <path d="M150 86l8 17 18 2-14 12 4 18-16-9-16 9 4-18-14-12 18-2z" fill="#ffd8e9"/>
+              <path d="M89 124c-12 4-18 15-13 25 9 1 18-3 23-13-2-6-5-10-10-12zM218 124c12 4 18 15 13 25-9 1-18-3-23-13 2-6 5-10 10-12z" fill="#ffdae9"/>
+              <path d="M91 124c-4 11-2 21 8 29M216 124c4 11 2 21-8 29" stroke="#7c2450" stroke-width="3" fill="none"/>
+              <circle cx="116" cy="91" r="5" fill="#ffd8e9"/><circle cx="193" cy="85" r="7" fill="#ffd8e9"/><circle cx="210" cy="103" r="3" fill="#ffd8e9"/>
+              <text x="150" y="38" text-anchor="middle" fill="#fff4fa" font-size="17" font-weight="900" letter-spacing="2">XI.I</text>
+              <text x="150" y="238" text-anchor="middle" fill="#fff4fa" font-size="25" font-weight="900" letter-spacing="2">PINK TIDE</text>
+              <text x="150" y="261" text-anchor="middle" fill="#ffd8e9" font-size="12" font-weight="800" letter-spacing="4">OCEAN CLUB</text>
+            </svg>
+          </div>
+          <div class="card-body">
+            <span class="concept-no pink-label">KONSEP 03</span>
+            <h3>Pink Tide</h3>
+            <p>Konsep merah muda yang cerah dan kekinian, dihiasi ombak, bintang laut, kerang, serta nuansa komunitas pantai.</p>
+            <div class="tags"><span class="tag">Merah muda</span><span class="tag">Laut</span><span class="tag">Modern</span></div>
+            <button class="vote-btn pink" type="button" data-vote="pink-tide">Vote Pink Tide</button>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="section-head"><div><h2>Aturan aman sebelum mulai</h2><p>Karena nama “paket 6-in-1” dapat memiliki isi berbeda, ubah nama produknya melalui tombol <b>Atur Produk</b>. Jadwal default dibuat konservatif agar kulit tidak langsung dibebani banyak bahan aktif.</p></div></div>
-        <div class="panel">
-          <div class="warning">
-            <div class="icon-box">⚠</div>
-            <div><b>Periksa label produkmu.</b> Bila toner mengandung AHA/BHA/PHA atau serum mengandung retinol, jangan gunakan setiap hari dan jangan menumpuk keduanya pada malam yang sama. Bila tidak ada sunscreen dalam paket, gunakan sunscreen terpisah broad-spectrum minimal SPF 30. Hentikan produk yang menimbulkan rasa terbakar menetap, gatal, bengkak, atau ruam.</div>
-          </div>
-          <div class="routine-grid">
-            <div class="routine-card"><div class="routine-number">01</div><h3>Kenalkan perlahan</h3><p>Minggu pertama memakai rutinitas dasar. Toner dan serum dimasukkan bertahap agar mudah mengetahui produk yang tidak cocok.</p></div>
-            <div class="routine-card"><div class="routine-number">02</div><h3>Sunscreen wajib</h3><p>Pakai pada pagi hari. Saat lama berada di luar, berkeringat, atau setelah berenang, aplikasikan kembali sesuai petunjuk produk.</p></div>
-            <div class="routine-card"><div class="routine-number">03</div><h3>Jangan menggosok</h3><p>Cuci wajah dengan lembut memakai ujung jari. Setelah workout, bilas keringat dan ganti baju; jangan menggosok wajah kasar dengan handuk.</p></div>
-          </div>
-        </div>
+    <section class="results" id="resultsSection" hidden aria-labelledby="resultsTitle">
+      <div class="section-head" style="margin-top:0">
+        <div><h2 id="resultsTitle">Hasil voting langsung</h2><p>Data diperbarui otomatis ketika suara baru masuk.</p></div>
+        <div id="lastUpdate" class="vote-state">Belum ada pembaruan</div>
+      </div>
+      <div class="result-summary">
+        <div class="total-block"><strong id="totalVotes">0</strong><span>total suara masuk</span></div>
+        <div class="results-note" id="leaderText">Belum ada konsep yang memimpin. Jadilah pemilih pertama.</div>
+      </div>
+
+      <div class="result-row">
+        <div class="result-top"><span class="result-name">Ghost Ranger</span><span class="result-count" id="countGhost">0 suara · 0%</span></div>
+        <div class="bar"><span id="barGhost"></span></div>
+      </div>
+      <div class="result-row">
+        <div class="result-top"><span class="result-name">STEMVERSE XI</span><span class="result-count" id="countStem">0 suara · 0%</span></div>
+        <div class="bar"><span id="barStem"></span></div>
+      </div>
+      <div class="result-row pink">
+        <div class="result-top"><span class="result-name">Pink Tide</span><span class="result-count" id="countPink">0 suara · 0%</span></div>
+        <div class="bar"><span id="barPink"></span></div>
+      </div>
+
+      <div class="result-actions">
+        <button class="secondary-btn" id="downloadCsv" type="button">Unduh hasil CSV</button>
+        <button class="secondary-btn" id="copyResult" type="button">Salin ringkasan</button>
       </div>
     </section>
 
-    <section class="section" id="checklist">
-      <div class="container">
-        <div class="section-head"><div><h2>Checklist harian 30 hari</h2><p>Klik kartu untuk membuka rincian. Tidak harus sempurna; konsistensi yang aman lebih penting daripada memaksa semua langkah saat kulit atau tubuh sedang tidak nyaman.</p></div></div>
-        <div class="controls">
-          <button class="filter active" data-filter="all">Semua</button>
-          <button class="filter" data-filter="1">Minggu 1</button>
-          <button class="filter" data-filter="2">Minggu 2</button>
-          <button class="filter" data-filter="3">Minggu 3</button>
-          <button class="filter" data-filter="4">Minggu 4+</button>
-          <input class="search" id="search" placeholder="Cari: workout, serum, buah, tidur..." />
-          <button class="btn" id="expandAll">Buka semua</button>
-        </div>
-        <div class="days-grid" id="daysGrid"></div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-head"><div><h2>Workout & progres tubuh</h2><p>Latihan utama dilakukan 3–4 kali per minggu agar otot punya waktu pulih. Kualitas gerakan lebih penting daripada mengejar angka saat teknik mulai berantakan.</p></div></div>
-        <div class="panel training-grid">
-          <div class="list-card">
-            <h3>Hari latihan utama</h3>
-            <ul class="clean-list">
-              <li><span class="dot">1</span><span><b>Pemanasan 5–7 menit:</b> arm circles, shoulder rolls, jumping jack ringan, hip hinge, dan wrist warm-up.</span></li>
-              <li><span class="dot">2</span><span><b>Push-up 20 repetisi × 3 set.</b> Istirahat 60–90 detik. Boleh memakai incline/knee push-up jika form rusak.</span></li>
-              <li><span class="dot">3</span><span><b>Plank 1 menit × 3 set.</b> Pinggul tidak jatuh, perut dikencangkan, dan leher netral.</span></li>
-              <li><span class="dot">4</span><span><b>Mountain climber 44 detik.</b> Minggu 1: 2 set; minggu 2–4: target 3 set, istirahat 45–60 detik.</span></li>
-              <li><span class="dot">5</span><span><b>Pendinginan 5 menit:</b> chest stretch, child's pose, hip flexor stretch, dan napas perlahan.</span></li>
-            </ul>
-          </div>
-          <div class="list-card">
-            <h3>Hari pemulihan</h3>
-            <ul class="clean-list">
-              <li><span class="dot">✓</span><span>Jalan cepat, bersepeda, atau olahraga santai 30–45 menit.</span></li>
-              <li><span class="dot">✓</span><span>Mobility 8–10 menit untuk bahu, dada, pinggul, paha belakang, dan pergelangan tangan.</span></li>
-              <li><span class="dot">✓</span><span>Hentikan latihan jika terasa nyeri tajam, pusing, sesak tidak wajar, atau mual berat.</span></li>
-              <li><span class="dot">✓</span><span>Usia 17 tahun dianjurkan aktif total sekitar 60 menit per hari; aktivitas sekolah, jalan kaki, permainan, dan olahraga semuanya dapat dihitung.</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-head"><div><h2>Makan untuk kulit, energi, dan bentuk tubuh</h2><p>Tidak ada satu makanan yang membuat wajah langsung “ganteng”. Pola makan seimbang membantu energi latihan, pertumbuhan, kesehatan kulit, dan berat badan yang lebih stabil.</p></div></div>
-        <div class="panel">
-          <div class="food-grid">
-            <div class="list-card">
-              <h3>Lebih sering dipilih</h3>
-              <ul class="clean-list">
-                <li><span class="dot">✓</span><span><b>Protein setiap makan:</b> telur, ikan, ayam, daging tanpa lemak, tahu, tempe, susu/yogurt bila cocok.</span></li>
-                <li><span class="dot">✓</span><span><b>Sayur dan buah beragam:</b> target praktis 5 porsi dalam sehari.</span></li>
-                <li><span class="dot">✓</span><span><b>Karbohidrat sumber energi:</b> nasi, kentang, ubi, oatmeal, jagung, roti gandum.</span></li>
-                <li><span class="dot">✓</span><span><b>Lemak baik:</b> ikan, kacang-kacangan, alpukat, dan biji-bijian.</span></li>
-                <li><span class="dot">✓</span><span>Minum air rutin; tambah saat cuaca panas dan setelah berkeringat.</span></li>
-              </ul>
-            </div>
-            <div class="list-card">
-              <h3>Kurangi, bukan harus pantang total</h3>
-              <ul class="clean-list">
-                <li><span class="dot no">–</span><span>Minuman tinggi gula, soda, boba, dan minuman energi terlalu sering.</span></li>
-                <li><span class="dot no">–</span><span>Gorengan, fast food, keripik, dan makanan ultra-proses sebagai menu utama setiap hari.</span></li>
-                <li><span class="dot no">–</span><span>Begadang sambil ngemil besar; ini dapat mengganggu tidur dan pemulihan.</span></li>
-                <li><span class="dot no">–</span><span>Diet ekstrem, melewatkan makan terus-menerus, atau suplemen “pemutih/pembentuk badan” tanpa tenaga kesehatan.</span></li>
-                <li><span class="dot no">–</span><span>Rokok, vape, dan alkohol—tidak mendukung kesehatan kulit maupun kebugaran.</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="meal-plan">
-            <div class="meal"><b>Sarapan</b><span>Telur + nasi/oatmeal + pisang atau pepaya.</span></div>
-            <div class="meal"><b>Makan siang</b><span>Nasi + ayam/ikan/tempe + dua jenis sayur.</span></div>
-            <div class="meal"><b>Camilan</b><span>Buah, yogurt, susu, jagung, atau segenggam kacang.</span></div>
-            <div class="meal"><b>Makan malam</b><span>Sup/tumis sayur + protein + porsi karbohidrat secukupnya.</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-head"><div><h2>Catatan khusus bekas cacar</h2><p>Bekas datar dan gelap dapat tampak memudar secara bertahap dengan perlindungan matahari dan perawatan lembut. Bekas yang cekung atau berlubang biasanya tidak hilang hanya dengan skincare dan perlu dinilai dokter kulit.</p></div></div>
-        <div class="panel">
-          <div class="routine-grid">
-            <div class="routine-card"><div class="routine-number">A</div><h3>Jangan dikorek</h3><p>Menggaruk, memencet, atau memakai scrub keras dapat menambah iritasi dan membuat noda lebih lama terlihat.</p></div>
-            <div class="routine-card"><div class="routine-number">B</div><h3>Lindungi dari UV</h3><p>Sunscreen membantu mencegah noda menjadi semakin gelap. Gunakan juga topi atau berteduh saat matahari terik.</p></div>
-            <div class="routine-card"><div class="routine-number">C</div><h3>Realistis</h3><p>Nilai perubahan setelah 8–12 minggu, bukan beberapa hari. Untuk jaringan parut cekung, bicarakan dengan orang tua dan dokter kulit.</p></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="panel source">
-          <b style="color:#e7edf7">Dasar panduan:</b> rutinitas remaja dibuat sederhana dengan cleanser, moisturizer, dan sunscreen; sunscreen broad-spectrum minimal SPF 30 diaplikasikan kembali ketika lama di luar/berkeringat; remaja 5–17 tahun dianjurkan aktif rata-rata sekitar 60 menit sehari; pola makan seimbang mencakup berbagai kelompok makanan dan buah-sayur; remaja 13–18 tahun umumnya membutuhkan 8–10 jam tidur. Sumber: <a href="https://www.aad.org/news/dermatologist-guide-skincare" target="_blank" rel="noopener">American Academy of Dermatology</a>, <a href="https://www.aad.org/media/stats-sunscreen" target="_blank" rel="noopener">AAD Sunscreen FAQs</a>, <a href="https://www.who.int/initiatives/behealthy/physical-activity" target="_blank" rel="noopener">WHO Physical Activity</a>, <a href="https://www.nhs.uk/live-well/eat-well/food-guidelines-and-food-labels/the-eatwell-guide/" target="_blank" rel="noopener">NHS Eatwell Guide</a>, dan <a href="https://jcsm.aasm.org/doi/10.5664/jcsm.6288" target="_blank" rel="noopener">AASM Sleep Consensus</a>.
-          <br><br>Program ini bersifat edukasi umum dan bukan diagnosis atau terapi medis. Hasil tiap orang berbeda. Bila memiliki alergi, eksim, jerawat berat, luka aktif, atau sedang memakai obat dokter, minta bantuan orang tua dan konsultasikan rutinitas kepada tenaga kesehatan.
-        </div>
-      </div>
+    <section class="how" aria-label="Cara voting">
+      <div class="how-item"><div class="how-no">1</div><b>Bandingkan konsep</b><span>Perhatikan warna, nama, simbol, dan kesan yang paling cocok dengan karakter kelas.</span></div>
+      <div class="how-item"><div class="how-no">2</div><b>Kirim satu suara</b><span>Setelah dikonfirmasi, pilihan tidak dapat diubah dari perangkat yang sama.</span></div>
+      <div class="how-item"><div class="how-no">3</div><b>Pantau hasilnya</b><span>Jumlah dan persentase suara akan diperbarui secara otomatis melalui Firebase.</span></div>
     </section>
   </main>
 
-  <footer class="footer"><div class="container">GLOW/30 • Konsisten, aman, dan realistis lebih keren daripada memaksa hasil instan.</div></footer>
+  <footer><div class="wrap">Voting Konsep Logo XI.I · Tahun Pelajaran 2026—2027</div></footer>
 
-  <div class="modal" id="settingsModal" aria-hidden="true">
-    <div class="modal-card">
-      <div class="modal-top"><div><h2 style="margin:0">Atur isi paket 6-in-1</h2><p style="color:var(--muted);margin:7px 0 0">Ganti nama sesuai tulisan pada kemasanmu.</p></div><button class="close" id="closeModal">✕</button></div>
-      <div class="settings-grid" style="margin-top:20px">
-        <div class="field"><label>Produk 1 — pembersih</label><input id="p1" /></div>
-        <div class="field"><label>Produk 2 — toner</label><input id="p2" /></div>
-        <div class="field"><label>Produk 3 — serum</label><input id="p3" /></div>
-        <div class="field"><label>Produk 4 — pelembap</label><input id="p4" /></div>
-        <div class="field"><label>Produk 5 — sunscreen/produk lain</label><input id="p5" /></div>
-        <div class="field"><label>Produk 6 — lip serum</label><input id="p6" /></div>
-        <div class="field"><label>Tanggal mulai (opsional)</label><input id="startDate" type="date" /></div>
-        <div class="field"><label>Target tidur</label><input id="sleepTarget" value="8–10 jam" /></div>
+  <dialog id="confirmDialog">
+    <div class="dialog-body">
+      <h3>Konfirmasi pilihan</h3>
+      <p>Kamu akan memilih <strong id="confirmName">—</strong>. Pilihan ini hanya dapat dikirim satu kali dari perangkat ini.</p>
+      <div class="dialog-actions">
+        <button class="secondary-btn" id="cancelVote" type="button">Batal</button>
+        <button class="confirm-btn" id="confirmVote" type="button">Ya, kirim vote</button>
       </div>
-      <div class="warning" style="margin-top:15px"><div class="icon-box">i</div><div><b>Penting</b>Jika produk kelima bukan sunscreen, tetap tambahkan sunscreen terpisah minimal SPF 30 pada rutinitas pagi.</div></div>
-      <div style="display:flex;gap:10px;justify-content:flex-end;margin-top:18px"><button class="btn" id="resetProgress">Reset checklist</button><button class="btn primary" id="saveSettings">Simpan pengaturan</button></div>
     </div>
-  </div>
-  <div class="toast" id="toast">Tersimpan</div>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script>
-(() => {
-  const defaults = {
-    p1:'Facial Wash', p2:'Brightening Toner', p3:'Brightening Serum',
-    p4:'Moisturizer', p5:'Sunscreen SPF 30–50', p6:'Lip Serum',
-    startDate:'', sleepTarget:'8–10 jam'
-  };
-  const settings = {...defaults, ...(JSON.parse(localStorage.getItem('glow30-settings') || '{}'))};
-  const state = JSON.parse(localStorage.getItem('glow30-checks') || '{}');
-  const grid = document.getElementById('daysGrid');
-  let currentFilter='all';
+  <script type="module">
+    /* ============================================================
+       FIREBASE CONFIGURATION
+       Ganti nilai PASTE_... dengan konfigurasi Web App Firebase Anda.
+       Firebase Console > Project settings > Your apps > Web app.
+       ============================================================ */
+    const firebaseConfig = {
+      apiKey: "PASTE_API_KEY",
+      authDomain: "PASTE_PROJECT_ID.firebaseapp.com",
+      projectId: "PASTE_PROJECT_ID",
+      storageBucket: "PASTE_PROJECT_ID.appspot.com",
+      messagingSenderId: "PASTE_MESSAGING_SENDER_ID",
+      appId: "PASTE_APP_ID"
+    };
 
-  const $ = id => document.getElementById(id);
-  const saveState = () => localStorage.setItem('glow30-checks', JSON.stringify(state));
-  const toast = msg => { const t=$('toast'); t.textContent=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),1800); };
+    const concepts = {
+      "ghost-ranger": "Ghost Ranger",
+      "stemverse-xi": "STEMVERSE XI",
+      "pink-tide": "Pink Tide"
+    };
 
-  function phase(day){
-    if(day<=7) return {name:'Fase 1 • Adaptasi', desc:'Bangun rutinitas dasar tanpa terburu-buru.'};
-    if(day<=14) return {name:'Fase 2 • Konsistensi', desc:'Serum mulai masuk perlahan dan teknik latihan dibangun.'};
-    if(day<=21) return {name:'Fase 3 • Penguatan', desc:'Pertahankan sunscreen, makanan, tidur, dan progres workout.'};
-    return {name:'Fase 4 • Stabilkan', desc:'Jangan menambah produk baru; evaluasi respons kulit dan tubuh.'};
-  }
+    const ui = {
+      banner: document.getElementById("statusBanner"),
+      state: document.getElementById("voteState"),
+      results: document.getElementById("resultsSection"),
+      dialog: document.getElementById("confirmDialog"),
+      confirmName: document.getElementById("confirmName"),
+      confirmVote: document.getElementById("confirmVote"),
+      toast: document.getElementById("toast")
+    };
 
-  function dayDate(day){
-    if(!settings.startDate) return '';
-    const d = new Date(settings.startDate+'T12:00:00');
-    d.setDate(d.getDate()+day-1);
-    return d.toLocaleDateString('id-ID',{weekday:'short',day:'numeric',month:'short'});
-  }
+    let pendingConcept = null;
+    let currentUser = null;
+    let userVote = null;
+    let latestCounts = { "ghost-ranger": 0, "stemverse-xi": 0, "pink-tide": 0 };
+    let firebaseMode = !Object.values(firebaseConfig).some(v => String(v).includes("PASTE_"));
 
-  function workoutFor(day){
-    const weekday=(day-1)%7+1;
-    const week=Math.ceil(day/7);
-    if([1,3,5].includes(weekday)){
-      const mc=week===1?'44 detik × 2 set':'44 detik × 3 set';
-      return {
-        label:'Strength Day',
-        tasks:[
-          'Pemanasan dinamis 5–7 menit.',
-          'Push-up 20 repetisi × 3 set; istirahat 60–90 detik. Turunkan level bila form rusak.',
-          'Plank 1 menit × 3 set; pinggul stabil dan perut aktif.',
-          `Mountain climber ${mc}; istirahat 45–60 detik.`,
-          'Pendinginan dan peregangan 5 menit.'
-        ]
-      };
+    function toast(message, type = "ok") {
+      ui.toast.textContent = message;
+      ui.toast.className = "toast show" + (type === "error" ? " error" : "");
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(() => ui.toast.className = "toast", 3200);
     }
-    if(weekday===7){
-      return {label:'Full Recovery',tasks:['Istirahat latihan kekuatan hari ini.','Jalan santai 20–30 menit bila badan nyaman.','Peregangan ringan 5–8 menit dan evaluasi nyeri/kelelahan.']};
+
+    function setButtonsDisabled(disabled) {
+      document.querySelectorAll("[data-vote]").forEach(btn => btn.disabled = disabled);
     }
-    return {label:'Active Recovery',tasks:['Jalan cepat/sepeda/aktivitas olahraga santai 30–45 menit.','Mobility bahu, dada, pinggul, paha belakang, dan pergelangan tangan 8–10 menit.','Jaga aktivitas total harian; jangan duduk terus-menerus.']};
-  }
 
-  function skinFor(day){
-    const tonerDays=[4,7,9,12,14,16,18,20,22,24,26,28,30];
-    const serumDays=[8,11,15,18,21,23,26,29];
-    const restNight=[10,13,17,25,28].includes(day);
-    const morning=[
-      `Cuci wajah lembut dengan ${settings.p1}.`,
-      `Gunakan ${settings.p4} tipis bila kulit membutuhkan kelembapan.`,
-      `Gunakan ${settings.p5}. Jika ini bukan sunscreen, tambahkan sunscreen terpisah minimal SPF 30.`,
-      `Gunakan ${settings.p6} tipis; ulangi bila bibir terasa kering.`
-    ];
-    const night=[`Bersihkan wajah dengan ${settings.p1}; air suam-suam kuku, bukan panas.`];
-    if(day===7) night.push(`Patch test ${settings.p3} di area kecil rahang/lengan; tunggu 24–48 jam sebelum pemakaian penuh.`);
-    if(tonerDays.includes(day) && !restNight) night.push(`Gunakan ${settings.p2} secukupnya. Lewati bila terasa perih atau mengandung exfoliant kuat.`);
-    if(serumDays.includes(day) && !restNight) night.push(`Gunakan ${settings.p3} 2–3 tetes. Jangan gabungkan dengan exfoliating toner/retinol pada malam yang sama.`);
-    if(restNight) night.push('Malam pemulihan kulit: tidak memakai toner/serum aktif.');
-    night.push(`Kunci dengan ${settings.p4}.`);
-    night.push(`Gunakan ${settings.p6} sebelum tidur.`);
-    return {morning,night};
-  }
-
-  function lifestyleFor(day){
-    const hygiene = day%3===1 ? 'Ganti atau balik sarung bantal; gunakan handuk wajah bersih.' : day%3===2 ? 'Bersihkan layar ponsel dan jangan sering menyentuh wajah.' : 'Rapikan kuku dan jangan menggaruk atau mengorek bekas cacar.';
-    const fruit = ['pisang/pepaya','jeruk/jambu','apel/pir','semangka/melon','mangga secukupnya'][day%5];
-    return [
-      `Tidur target ${settings.sleepTarget}; usahakan jam tidur dan bangun konsisten.`,
-      `Makan sumber protein minimal 2–3 kali hari ini: telur, ikan, ayam, tahu, tempe, atau pilihan setara.`,
-      `Tambahkan sayur dan buah; contoh buah hari ini: ${fruit}.`,
-      'Minum air secara berkala dan tambah setelah berkeringat.',
-      'Kurangi minuman manis, gorengan berlebihan, dan camilan ultra-proses hari ini.',
-      hygiene
-    ];
-  }
-
-  function makeTask(day, group, idx, text){
-    const id=`d${day}-${group}-${idx}`;
-    return `<label class="task"><input type="checkbox" data-check="${id}" ${state[id]?'checked':''}><span>${text}</span></label>`;
-  }
-
-  function render(){
-    grid.innerHTML='';
-    for(let day=1;day<=30;day++){
-      const ph=phase(day), skin=skinFor(day), workout=workoutFor(day), life=lifestyleFor(day);
-      const all=[...skin.morning,...workout.tasks,...life,...skin.night];
-      const keys=all.map((_,i)=>`d${day}-all-${i}`); // only used for counting map below
-      const card=document.createElement('article');
-      card.className='day-card';
-      card.dataset.week=day<=7?'1':day<=14?'2':day<=21?'3':'4';
-      card.dataset.search=(ph.name+' '+ph.desc+' '+workout.label+' '+all.join(' ')).toLowerCase();
-      card.id=`day-${day}`;
-      let globalIndex=0;
-      const groupHtml=(title,items)=>{
-        const html=items.map(text=>makeTask(day,'all',globalIndex++,text)).join('');
-        return `<div class="task-group"><div class="task-group-title">${title}</div>${html}</div>`;
-      };
-      card.innerHTML=`
-        <div class="day-head">
-          <div class="day-index">${String(day).padStart(2,'0')}</div>
-          <div class="day-title"><h3>Hari ${day}${dayDate(day)?' • '+dayDate(day):''}</h3><p>${ph.desc}</p><span class="phase">${ph.name}</span><span class="phase">${workout.label}</span></div>
-          <div class="day-score"><strong>0%</strong>hari ini</div><div class="chev">⌄</div>
-        </div>
-        <div class="day-body">
-          ${groupHtml('Pagi • Skincare',skin.morning)}
-          ${groupHtml('Gerak • Workout',workout.tasks)}
-          ${groupHtml('Nutrisi, tidur & kebersihan',life)}
-          ${groupHtml('Malam • Skincare',skin.night)}
-        </div>`;
-      card.querySelector('.day-head').addEventListener('click',()=>card.classList.toggle('open'));
-      grid.appendChild(card);
+    function markVoted(conceptId) {
+      userVote = conceptId;
+      document.querySelectorAll(".card").forEach(card => card.classList.toggle("selected", card.dataset.id === conceptId));
+      setButtonsDisabled(true);
+      ui.state.textContent = conceptId ? `Pilihanmu: ${concepts[conceptId]}` : "Satu vote untuk setiap perangkat";
+      if (conceptId) ui.results.hidden = false;
     }
-    bindChecks(); applyFilter(); updateProgress();
-  }
 
-  function bindChecks(){
-    document.querySelectorAll('[data-check]').forEach(cb=>{
-      cb.addEventListener('change',e=>{
-        state[e.target.dataset.check]=e.target.checked;
-        saveState();updateProgress();
-      });
-    });
-  }
+    function updateResults(counts) {
+      latestCounts = counts;
+      const total = Object.values(counts).reduce((a,b) => a+b, 0);
+      const pct = id => total ? Math.round((counts[id] / total) * 100) : 0;
+      document.getElementById("totalVotes").textContent = total;
+      document.getElementById("countGhost").textContent = `${counts["ghost-ranger"]} suara · ${pct("ghost-ranger")}%`;
+      document.getElementById("countStem").textContent = `${counts["stemverse-xi"]} suara · ${pct("stemverse-xi")}%`;
+      document.getElementById("countPink").textContent = `${counts["pink-tide"]} suara · ${pct("pink-tide")}%`;
+      document.getElementById("barGhost").style.width = `${pct("ghost-ranger")}%`;
+      document.getElementById("barStem").style.width = `${pct("stemverse-xi")}%`;
+      document.getElementById("barPink").style.width = `${pct("pink-tide")}%`;
+      document.getElementById("lastUpdate").textContent = `Diperbarui ${new Date().toLocaleTimeString("id-ID", {hour:"2-digit", minute:"2-digit"})}`;
 
-  function updateProgress(){
-    const all=[...document.querySelectorAll('[data-check]')];
-    const checked=all.filter(x=>x.checked).length;
-    let completedDays=0, streak=0;
-    document.querySelectorAll('.day-card').forEach(card=>{
-      const cbs=[...card.querySelectorAll('[data-check]')];
-      const n=cbs.filter(x=>x.checked).length;
-      const pct=cbs.length?Math.round(n/cbs.length*100):0;
-      card.querySelector('.day-score strong').textContent=pct+'%';
-      card.classList.toggle('completed',pct===100);
-      if(pct===100) completedDays++;
-    });
-    for(let day=1;day<=30;day++){
-      const cbs=[...document.querySelectorAll(`#day-${day} [data-check]`)];
-      if(cbs.length && cbs.every(x=>x.checked)) streak++; else break;
-    }
-    const pct=all.length?Math.round(checked/all.length*100):0;
-    $('progressRing').style.setProperty('--p',pct);
-    $('progressPercent').textContent=pct+'%';$('doneTasks').textContent=checked;$('doneDays').textContent=completedDays;$('streak').textContent=streak;
-    $('currentPhase').textContent=completedDays>=30?'Program selesai':completedDays?`Lanjut Hari ${Math.min(completedDays+1,30)}`:'Mulai Hari 1';
-  }
-
-  function applyFilter(){
-    const term=$('search').value.trim().toLowerCase();
-    document.querySelectorAll('.day-card').forEach(card=>{
-      const weekOk=currentFilter==='all'||card.dataset.week===currentFilter;
-      const searchOk=!term||card.dataset.search.includes(term);
-      card.style.display=weekOk&&searchOk?'':'none';
-    });
-  }
-
-  document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{
-    document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');currentFilter=b.dataset.filter;applyFilter();
-  }));
-  $('search').addEventListener('input',applyFilter);
-  $('expandAll').addEventListener('click',()=>{
-    const visible=[...document.querySelectorAll('.day-card')].filter(c=>c.style.display!=='none');
-    const shouldOpen=visible.some(c=>!c.classList.contains('open'));
-    visible.forEach(c=>c.classList.toggle('open',shouldOpen));
-    $('expandAll').textContent=shouldOpen?'Tutup semua':'Buka semua';
-  });
-  $('todayBtn').addEventListener('click',()=>{
-    let day=1;
-    if(settings.startDate){
-      const start=new Date(settings.startDate+'T00:00:00'); const now=new Date();
-      day=Math.max(1,Math.min(30,Math.floor((now-start)/(86400000))+1));
-    } else {
-      for(let d=1;d<=30;d++){
-        const cbs=[...document.querySelectorAll(`#day-${d} [data-check]`)];
-        if(cbs.some(x=>!x.checked)){day=d;break;}
+      if (!total) {
+        document.getElementById("leaderText").textContent = "Belum ada konsep yang memimpin. Jadilah pemilih pertama.";
+      } else {
+        const max = Math.max(...Object.values(counts));
+        const leaders = Object.keys(counts).filter(k => counts[k] === max).map(k => concepts[k]);
+        document.getElementById("leaderText").textContent = leaders.length === 1
+          ? `${leaders[0]} sementara memimpin dengan ${max} suara.`
+          : `Posisi sementara seri: ${leaders.join(" dan ")}, masing-masing ${max} suara.`;
       }
     }
-    const card=$(`day-${day}`);card.classList.add('open');card.scrollIntoView({behavior:'smooth',block:'center'});
-  });
-  $('printBtn').addEventListener('click',()=>window.print());
 
-  function fillSettings(){Object.keys(defaults).forEach(k=>{if($(k)) $(k).value=settings[k]||'';});}
-  $('settingsBtn').addEventListener('click',()=>{$('settingsModal').classList.add('open');$('settingsModal').setAttribute('aria-hidden','false');fillSettings();});
-  $('closeModal').addEventListener('click',()=>{$('settingsModal').classList.remove('open');$('settingsModal').setAttribute('aria-hidden','true');});
-  $('settingsModal').addEventListener('click',e=>{if(e.target===$('settingsModal')) $('closeModal').click();});
-  $('saveSettings').addEventListener('click',()=>{
-    Object.keys(defaults).forEach(k=>{if($(k)) settings[k]=$(k).value.trim()||defaults[k];});
-    localStorage.setItem('glow30-settings',JSON.stringify(settings));$('closeModal').click();render();toast('Pengaturan produk tersimpan');
-  });
-  $('resetProgress').addEventListener('click',()=>{
-    if(confirm('Hapus seluruh checklist dan mulai dari nol?')){Object.keys(state).forEach(k=>delete state[k]);saveState();render();toast('Checklist direset');}
-  });
+    function openConfirm(conceptId) {
+      if (userVote) return toast("Perangkat ini sudah pernah melakukan voting.", "error");
+      pendingConcept = conceptId;
+      ui.confirmName.textContent = concepts[conceptId];
+      ui.dialog.showModal();
+    }
 
-  render();
-})();
-</script>
+    document.querySelectorAll("[data-vote]").forEach(btn => btn.addEventListener("click", () => openConfirm(btn.dataset.vote)));
+    document.getElementById("cancelVote").addEventListener("click", () => ui.dialog.close());
+    ui.dialog.addEventListener("click", e => { if (e.target === ui.dialog) ui.dialog.close(); });
+
+    document.getElementById("showResultsBtn").addEventListener("click", () => {
+      ui.results.hidden = false;
+      ui.results.scrollIntoView({behavior:"smooth", block:"start"});
+    });
+
+    document.getElementById("shareBtn").addEventListener("click", async () => {
+      try {
+        if (navigator.share) await navigator.share({title: document.title, text: "Yuk vote konsep logo kelas XI.I!", url: location.href.split("?")[0]});
+        else { await navigator.clipboard.writeText(location.href.split("?")[0]); toast("Tautan berhasil disalin."); }
+      } catch (_) {}
+    });
+
+    document.getElementById("downloadCsv").addEventListener("click", () => {
+      const total = Object.values(latestCounts).reduce((a,b)=>a+b,0);
+      const rows = [["Konsep","Jumlah Suara","Persentase"]];
+      Object.entries(concepts).forEach(([id,name]) => rows.push([name, latestCounts[id], total ? `${((latestCounts[id]/total)*100).toFixed(1)}%` : "0%"]));
+      rows.push(["TOTAL", total, "100%"]);
+      const csv = rows.map(r => r.map(v => `"${String(v).replaceAll('"','""')}"`).join(",")).join("\n");
+      const blob = new Blob(["\ufeff" + csv], {type:"text/csv;charset=utf-8"});
+      const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "hasil-vote-logo-xi1.csv"; a.click(); URL.revokeObjectURL(a.href);
+    });
+
+    document.getElementById("copyResult").addEventListener("click", async () => {
+      const total = Object.values(latestCounts).reduce((a,b)=>a+b,0);
+      const text = `Hasil Vote Logo XI.I\nGhost Ranger: ${latestCounts["ghost-ranger"]}\nSTEMVERSE XI: ${latestCounts["stemverse-xi"]}\nPink Tide: ${latestCounts["pink-tide"]}\nTotal: ${total}`;
+      await navigator.clipboard.writeText(text); toast("Ringkasan hasil berhasil disalin.");
+    });
+
+    async function startLocalDemo() {
+      firebaseMode = false;
+      ui.banner.classList.add("show");
+      const localVote = localStorage.getItem("logoVoteXI1");
+      const localCounts = { "ghost-ranger": 0, "stemverse-xi": 0, "pink-tide": 0 };
+      if (localVote && localCounts[localVote] !== undefined) localCounts[localVote] = 1;
+      updateResults(localCounts);
+      markVoted(localVote);
+      if (!localVote) { setButtonsDisabled(false); ui.state.textContent = "Mode demo — satu vote di perangkat ini"; }
+
+      ui.confirmVote.onclick = () => {
+        if (!pendingConcept || localStorage.getItem("logoVoteXI1")) return;
+        localStorage.setItem("logoVoteXI1", pendingConcept);
+        localCounts[pendingConcept] = 1;
+        updateResults(localCounts);
+        markVoted(pendingConcept);
+        ui.dialog.close();
+        toast("Vote demo tersimpan di perangkat ini.");
+      };
+    }
+
+    async function startFirebase() {
+      try {
+        const [appMod, authMod, storeMod] = await Promise.all([
+          import("https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js"),
+          import("https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js"),
+          import("https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js")
+        ]);
+        const app = appMod.initializeApp(firebaseConfig);
+        const auth = authMod.getAuth(app);
+        const db = storeMod.getFirestore(app);
+        await authMod.setPersistence(auth, authMod.browserLocalPersistence);
+        const credential = await authMod.signInAnonymously(auth);
+        currentUser = credential.user;
+
+        const myVoteRef = storeMod.doc(db, "votes", currentUser.uid);
+        const myVoteSnap = await storeMod.getDoc(myVoteRef);
+        markVoted(myVoteSnap.exists() ? myVoteSnap.data().conceptId : null);
+        if (!myVoteSnap.exists()) { setButtonsDisabled(false); ui.state.textContent = "Satu vote untuk setiap perangkat"; }
+
+        storeMod.onSnapshot(storeMod.collection(db, "votes"), snapshot => {
+          const counts = { "ghost-ranger": 0, "stemverse-xi": 0, "pink-tide": 0 };
+          snapshot.forEach(docSnap => {
+            const id = docSnap.data().conceptId;
+            if (counts[id] !== undefined) counts[id]++;
+          });
+          updateResults(counts);
+        }, error => {
+          console.error(error);
+          toast("Gagal membaca hasil. Periksa Firestore Rules.", "error");
+        });
+
+        ui.confirmVote.onclick = async () => {
+          if (!pendingConcept || userVote) return;
+          ui.confirmVote.disabled = true;
+          ui.confirmVote.textContent = "Mengirim…";
+          try {
+            await storeMod.setDoc(myVoteRef, {conceptId: pendingConcept, votedAt: storeMod.serverTimestamp()});
+            markVoted(pendingConcept);
+            ui.dialog.close();
+            toast("Vote berhasil tersimpan. Terima kasih!");
+          } catch (error) {
+            console.error(error);
+            toast(error.code === "permission-denied" ? "Perangkat ini sudah pernah voting atau aturan database belum benar." : "Vote gagal dikirim. Coba lagi.", "error");
+          } finally {
+            ui.confirmVote.disabled = false;
+            ui.confirmVote.textContent = "Ya, kirim vote";
+          }
+        };
+      } catch (error) {
+        console.error("Firebase startup failed", error);
+        toast("Firebase belum dapat terhubung. Website dialihkan ke mode demo.", "error");
+        startLocalDemo();
+      }
+    }
+
+    if (new URLSearchParams(location.search).get("hasil") === "1") ui.results.hidden = false;
+    firebaseMode ? startFirebase() : startLocalDemo();
+  </script>
 </body>
 </html>
