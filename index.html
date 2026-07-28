@@ -137,6 +137,8 @@
       line-height: 1.55;
     }
     .status-banner.show { display: flex; }
+    .status-banner.ok { border-color: rgba(96, 235, 177, .38); background: rgba(10, 83, 62, .38); color: #c9ffe8; }
+    .status-banner.error { border-color: rgba(255, 115, 132, .38); background: rgba(105, 22, 39, .42); color: #ffd4dc; }
 
     .section-head { display: flex; justify-content: space-between; align-items: end; gap: 20px; margin: 26px 0 20px; }
     .section-head h2 { margin: 0; font-size: clamp(1.55rem, 3vw, 2.3rem); letter-spacing: -.03em; }
@@ -296,10 +298,7 @@
       <span class="eyebrow"><i class="pulse"></i> VOTING LOGO KELAS XI.I</span>
       <h1>Pilih identitas yang paling <span class="gradient-text">mewakili kita.</span></h1>
       <p class="lead">Lihat ketiga konsep, pilih satu yang paling kuat, lalu kirim suaramu. Setiap perangkat hanya mendapat satu kesempatan memilih.</p>
-      <div class="status-banner" id="statusBanner" role="status">
-        <span>⚠️</span>
-        <div><strong>Mode demo lokal aktif.</strong><br>Suara hanya tersimpan di perangkat ini. Isi konfigurasi Firebase di bagian JavaScript agar seluruh suara dari GitHub Pages tersimpan bersama.</div>
-      </div>
+      <div class="status-banner" id="statusBanner" role="status" aria-live="polite"></div>
     </section>
 
     <section aria-labelledby="conceptTitle">
@@ -457,16 +456,16 @@
   <script type="module">
     /* ============================================================
        FIREBASE CONFIGURATION
-       Ganti nilai PASTE_... dengan konfigurasi Web App Firebase Anda.
-       Firebase Console > Project settings > Your apps > Web app.
+       Konfigurasi Firebase proyek voting-logo-xi1.
+       Mode demo lokal dinonaktifkan agar hasil antarperangkat tidak menyesatkan.
        ============================================================ */
     const firebaseConfig = {
-      apiKey: "PASTE_API_KEY",
-      authDomain: "PASTE_PROJECT_ID.firebaseapp.com",
-      projectId: "PASTE_PROJECT_ID",
-      storageBucket: "PASTE_PROJECT_ID.appspot.com",
-      messagingSenderId: "PASTE_MESSAGING_SENDER_ID",
-      appId: "PASTE_APP_ID"
+      apiKey: "AIzaSyDNRgDqDv3WW8I0owFmjSyvCYzc1--5iRs",
+      authDomain: "voting-logo-xi1.firebaseapp.com",
+      projectId: "voting-logo-xi1",
+      storageBucket: "voting-logo-xi1.firebasestorage.app",
+      messagingSenderId: "416382997424",
+      appId: "1:416382997424:web:2e3d1557ba9377a837fc75"
     };
 
     const concepts = {
@@ -500,6 +499,11 @@
 
     function setButtonsDisabled(disabled) {
       document.querySelectorAll("[data-vote]").forEach(btn => btn.disabled = disabled);
+    }
+
+    function showConnectionStatus(kind, title, detail) {
+      ui.banner.className = `status-banner show ${kind}`;
+      ui.banner.innerHTML = `<span>${kind === "ok" ? "✅" : "⚠️"}</span><div><strong>${title}</strong><br>${detail}</div>`;
     }
 
     function markVoted(conceptId) {
@@ -573,25 +577,14 @@
       await navigator.clipboard.writeText(text); toast("Ringkasan hasil berhasil disalin.");
     });
 
-    async function startLocalDemo() {
+    async function stopWithFirebaseError(error) {
       firebaseMode = false;
-      ui.banner.classList.add("show");
-      const localVote = localStorage.getItem("logoVoteXI1");
-      const localCounts = { "ghost-ranger": 0, "stemverse-xi": 0, "pink-tide": 0 };
-      if (localVote && localCounts[localVote] !== undefined) localCounts[localVote] = 1;
-      updateResults(localCounts);
-      markVoted(localVote);
-      if (!localVote) { setButtonsDisabled(false); ui.state.textContent = "Mode demo — satu vote di perangkat ini"; }
-
-      ui.confirmVote.onclick = () => {
-        if (!pendingConcept || localStorage.getItem("logoVoteXI1")) return;
-        localStorage.setItem("logoVoteXI1", pendingConcept);
-        localCounts[pendingConcept] = 1;
-        updateResults(localCounts);
-        markVoted(pendingConcept);
-        ui.dialog.close();
-        toast("Vote demo tersimpan di perangkat ini.");
-      };
+      setButtonsDisabled(true);
+      ui.state.textContent = "Voting belum aktif — Firebase tidak terhubung";
+      const code = error?.code || "firebase/connection-failed";
+      const detail = error?.message ? `${code}: ${error.message}` : code;
+      showConnectionStatus("error", "Firebase tidak terhubung.", `Vote tidak disimpan agar hasil antar-HP tidak berbeda. Detail: ${detail}`);
+      toast("Firebase gagal terhubung. Periksa domain, deployment GitHub, dan koneksi internet.", "error");
     }
 
     async function startFirebase() {
@@ -607,6 +600,7 @@
         await authMod.setPersistence(auth, authMod.browserLocalPersistence);
         const credential = await authMod.signInAnonymously(auth);
         currentUser = credential.user;
+        showConnectionStatus("ok", "Firebase tersambung.", "Semua suara akan tersimpan dan diperbarui dari database yang sama secara real-time.");
 
         const myVoteRef = storeMod.doc(db, "votes", currentUser.uid);
         const myVoteSnap = await storeMod.getDoc(myVoteRef);
@@ -622,6 +616,7 @@
           updateResults(counts);
         }, error => {
           console.error(error);
+          showConnectionStatus("error", "Gagal membaca Firestore.", `${error.code || "firestore/error"}: ${error.message || "Periksa Firestore Rules."}`);
           toast("Gagal membaca hasil. Periksa Firestore Rules.", "error");
         });
 
@@ -644,13 +639,13 @@
         };
       } catch (error) {
         console.error("Firebase startup failed", error);
-        toast("Firebase belum dapat terhubung. Website dialihkan ke mode demo.", "error");
-        startLocalDemo();
+        stopWithFirebaseError(error);
       }
     }
 
     if (new URLSearchParams(location.search).get("hasil") === "1") ui.results.hidden = false;
-    firebaseMode ? startFirebase() : startLocalDemo();
+    if (firebaseMode) startFirebase();
+    else stopWithFirebaseError({code: "firebase/config-missing", message: "Konfigurasi Firebase belum diisi."});
   </script>
 </body>
 </html>
